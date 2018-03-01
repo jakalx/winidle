@@ -38,10 +38,6 @@
 #endif
 
 namespace util {
-  void usage() {
-    std::cout << "usage: win-idle [-h|--help]" << std::endl;
-  }
-
   std::chrono::milliseconds get_idle_time() {
 #if defined(_WIN32)
     LASTINPUTINFO last_input_info;
@@ -78,7 +74,7 @@ int main(int argc, char * argv[]) {
     for (int i = 1; i < argc; ++i) {
       const std::string arg{ argv[i] };
       if (arg == "-h" || arg == "--help") {
-        util::usage();
+        std::cout << "usage: " << argv[0] << " [-h|--help|-V|--version]" << std::endl;
         return 0;
       } else if (arg == "-V" || arg == "--version") {
         std::cerr << META_NAME_VERSION << std::endl;
