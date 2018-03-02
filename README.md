@@ -5,7 +5,7 @@
 
 Requires cmake and a C compiler.
 
-### Linux
+### Linux (CMake)
 
 Uses the Xscreensaver library to get the idle time.
 ```
@@ -16,6 +16,11 @@ make
 ```
 
 Will create the executable `src/winidle`.
+
+### Linux (manually)
+```
+gcc -o winidle src/winidle.c -lX11 -lXss
+```
 
 ### Windows (cross-compilation)
 ```
