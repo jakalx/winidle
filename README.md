@@ -35,3 +35,10 @@ Will create the executable `src/winidle.exe`.
 ### Windows (native)
 
 Use CMake to generate a Visual Studio project, open and build it. This part is currently untested.
+
+## How to use it in org-mode
+```lisp
+(defun org-user-idle-seconds ()
+  "Return the current Win idle time in seconds."
+  (/ (string-to-number (shell-command-to-string "winidle.exe")) 1000))
+```
